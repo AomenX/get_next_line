@@ -6,7 +6,7 @@
 /*   By: ammomen <ammomen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/11 10:56:45 by marvin            #+#    #+#             */
-/*   Updated: 2026/11/11 18:11:41 by ammomen          ###   ########.fr       */
+/*   Updated: 2026/11/12 18:55:37 by ammomen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,11 +94,11 @@ int	ft_buffer_grow(t_buffer *buffer, size_t new_capacity)
 	return (1);
 }
 
-int	ft_buffer_find_newline(t_buffer *buffer, size_t *index)
+int	ft_buffer_find_newline(t_buffer *buffer, size_t from, size_t *index)
 {
 	size_t	i;
 
-	i = buffer->start;
+	i = from;
 	while (i < buffer->end)
 	{
 		if (buffer->data[i] == '\n')
