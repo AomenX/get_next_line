@@ -6,7 +6,7 @@
 /*   By: ammomen <ammomen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/11 10:50:49 by marvin            #+#    #+#             */
-/*   Updated: 2026/11/12 18:50:10 by ammomen          ###   ########.fr       */
+/*   Updated: 2026/11/14 16:39:01 by ammomen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ void	ft_buffer_compact(t_buffer *buffer);
 int		ft_buffer_reserve(t_buffer *buffer, size_t additional);
 size_t	ft_next_capacity(size_t capacity, size_t required);
 int		ft_buffer_grow(t_buffer *buffer, size_t new_capacity);
-int		ft_buffer_find_newline(t_buffer *buffer, size_t from, size_t *index);
+int		ft_buffer_newline(t_buffer *buffer, size_t from, size_t *index);
 char	*ft_buffer_extract(t_buffer *buffer, size_t length);
 void	ft_buffer_clear(t_buffer *buffer);
 

@@ -6,7 +6,7 @@
 /*   By: ammomen <ammomen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/11 16:41:59 by marvin            #+#    #+#             */
-/*   Updated: 2026/11/12 18:55:49 by ammomen          ###   ########.fr       */
+/*   Updated: 2026/11/14 16:39:41 by ammomen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ int	ft_buffer_fill(int fd, t_buffer *buffer, size_t *newline)
 	ssize_t	bytes_read;
 	size_t	scan_start;
 
-	if (ft_buffer_find_newline(buffer, buffer->start, newline))
+	if (ft_buffer_newline(buffer, buffer->start, newline))
 		return (1);
 	while (1)
 	{
@@ -53,7 +53,7 @@ int	ft_buffer_fill(int fd, t_buffer *buffer, size_t *newline)
 		if (bytes_read == 0)
 			return (0);
 		buffer->end += bytes_read;
-		if (ft_buffer_find_newline(buffer, scan_start, newline))
+		if (ft_buffer_newline(buffer, scan_start, newline))
 			return (1);
 	}
 }
